@@ -8,7 +8,6 @@ Created on Tue Apr 26 15:02:09 2016
 
 import tkinter as tk
 import ep3 
-
 import tkinter.messagebox
 
 class Tabuleiro: 
@@ -27,7 +26,7 @@ class Tabuleiro:
         self.botao1.configure(height=15,width=30, command=self.muda_tabuleiro1)
         self.botao1.grid(row=0, column=0)
         
-		
+        
         self.botao2=tk.Button(self.window)
         self.botao2.configure(height=15,width=30, command=self.muda_tabuleiro2)
         self.botao2.grid(row=0, column=1)
@@ -66,11 +65,13 @@ class Tabuleiro:
         self.botao9=tk.Button(self.window)
         self.botao9.configure(height=15,width=30, command=self.muda_tabuleiro9)
         self.botao9.grid(row=2, column=2)
+
+
+        prox_jogada=tk.Label(self.window, text="Próxima jogada:{0}".format(self.proximoJogador))
+        prox_jogada.grid(row=3,column=0)
         
 
 
-        prox_jogada=tk.Label(self.window, text="Próxima jogada: ")
-        prox_jogada.grid(row=3,column=0)
 
     def iniciar(self):
         self.window.mainloop()
@@ -87,14 +88,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(0,0)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+        
 
     def muda_tabuleiro2(self):
         if self.proximoJogador == "X":
@@ -107,14 +111,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(0,1)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+        
         
     def muda_tabuleiro3(self):
         if self.proximoJogador == "X":
@@ -127,14 +134,16 @@ class Tabuleiro:
         self.jogo.recebe_jogada(0,2)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
         
     def muda_tabuleiro4(self):
         if self.proximoJogador == "X":
@@ -147,14 +156,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(1,0)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+       
         
     def muda_tabuleiro5(self):
         if self.proximoJogador == "X":
@@ -167,14 +179,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(1,1)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+        
         
 
     def muda_tabuleiro6(self):
@@ -188,14 +203,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(1,2)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+       
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+        
 
 
     def muda_tabuleiro7(self):
@@ -209,14 +227,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(2,0)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+       
         
     def muda_tabuleiro8(self):
         if self.proximoJogador == "X":
@@ -229,14 +250,17 @@ class Tabuleiro:
         self.jogo.recebe_jogada(2,1)
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+       
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
             self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
+            self.jogo.limpa_jogadas()    
+        
 
     def muda_tabuleiro9(self):
         if self.proximoJogador == "X":
@@ -249,14 +273,20 @@ class Tabuleiro:
         self.jogo.recebe_jogada(2,2)    
         
         a = self.jogo.verifica_ganhador()
-        if a == 0:
-            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
-        elif a == 1:
+        
+        if a == 1:
             tkinter.messagebox.showinfo("Jogador X", "Parabéns, você é o ganhador")
+            self.jogo.limpa_jogadas()
         elif a == 2:
             tkinter.messagebox.showinfo("Jogador O" , "Parabéns, você é o ganhador")
-        if a == 1 or a == 2 or a == 0:
-            
+            self.jogo.limpa_jogadas()
+        elif a == 0:
+            tkinter.messagebox.showinfo("Jogadores", "Deu velha!")
             self.jogo.limpa_jogadas()
 
-    
+       
+
+
+tabuleiro=Tabuleiro()
+tabuleiro.iniciar()
+
